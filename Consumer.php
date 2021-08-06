@@ -8,7 +8,7 @@ class Consumer extends Config {
         $topic_config = new RdKafka\TopicConf();
         $topic_config->set('auto.commit.interval.ms', $this->autocommit_ms);
         $kafka_consumer_config = new RdKafka\Consumer($this->conf);
-        $kafka_consumer = $kafka_consumer_config->newTopic($topic);
+        $kafka_consumer = $kafka_consumer_config->newTopic($topic, $topic_config);
         $kafka_consumer->consumeStart(0, RD_KAFKA_OFFSET_BEGINNING);
 
         while (true) {
