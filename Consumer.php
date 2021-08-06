@@ -26,4 +26,4 @@ class Consumer extends Config {
 }
 
 $consumer = new Consumer();
-$consumer->consume('log', 'my_group_id');
+$consumer->consume('sample-topic', 'my_group_id');
